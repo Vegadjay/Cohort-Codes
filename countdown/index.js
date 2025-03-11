@@ -20,7 +20,7 @@ function updateTimer(value) {
         if (countTime <= 0) {
             clearInterval(timer);
             errorMessage.style.color = "yellow";
-            errorMessage.textContent = "Time is complete";
+            errorMessage.textContent = "Time is over !!!!!!!!";
         } else {
             countTime--;
             timerCount.textContent = countTime;
