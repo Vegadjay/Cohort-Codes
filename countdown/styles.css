@@ -1,0 +1,27 @@
+body {
+    background-image: url("https://wallpaperaccess.com/full/212710.jpg");
+    background-repeat: no-repeat;
+    background-position: cover;
+    background-size: cover;
+}
+
+
+.countdown-container {
+    backdrop-filter: blur(16px) saturate(180%);
+    border-radius: 1.5rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+#timer-count {
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.05em;
+}
+
+.timer-animation {
+    transition: all 0.3s ease;
+}
+
+
+.btn-gradient {
+    background: linear-gradient(to right, #4f46e5, #7e22ce);
+}

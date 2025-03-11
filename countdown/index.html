@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count Down | Jay Vegad</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="min-h-screen flex justify-center items-center p-4">
+    <div class="countdown-container p-8 w-full max-w-2xl">
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-indigo-900 mb-2">Countdown Timer</h1>
+            <p class="text-gray-600">Set Your Count-down here...</p>
+        </div>
+
+        <div class="rounded-2xl p-8 mb-8">
+            <div class="flex flex-col items-center">
+                <div id="timer-count" class="text-7xl font-bold text-indigo-600 mb-2">00</div>
+                <div class="text-xl text-gray-500">seconds remaining</div>
+                <div id="error-msg" class="mt-3 text-red-500 font-medium"></div>
+            </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 items-center">
+            <div class="relative w-full">
+                <input type="number" id="number-id"
+                    class="w-full px-6 py-4 rounded-xl border-2 border-indigo-200 focus:border-indigo-500 focus:outline-none text-lg transition-all duration-300"
+                    placeholder="Enter seconds">
+            </div>
+            <button id="startButton"
+                class="btn-gradient text-white font-medium rounded-xl px-8 py-4 text-lg shadow-lg w-full sm:w-auto">
+                Start Timer
+            </button>
+        </div>
+
+        <div class="mt-6 text-center text-red-200 text-xl">
+            Created by Jay Vegad | 2025
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
