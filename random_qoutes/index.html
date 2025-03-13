@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Randome Qoutes Generator | Jay vegad</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="h-screen p-4 font-mono flex flex-col overflow-hidden justify-center items-center text-blue-600">
+    <div class="flex flex-col h-[40rem] flex-start -ml-[30rem] items-center justify-center w-full rounded-2xl">
+        <!-- Heading Section -->
+        <section class="text-center">
+            <h1 class="text-3xl mt-7 ml-[38rem] underline poppins-font">Welcome To Randome Quote Generator <i
+                    class="fa fa-book" style="font-size:48px;"></i>
+            </h1>
+        </section>
+        <!-- Qoutes Section -->
+        <section class="h-96 w-[70rem] mt-[8.4rem] ml-[32rem] flex flex-col">
+            <p id="qoute-para" class="text-[1.6rem] -ml-[4rem] -mt-[1.3rem] font-medium
+            "></p>
+
+            <p id="qoute-para1" class="text-[1.6rem] -ml-[4rem] mt-12 font-medium
+"></p>
+            <p id="qoute-para2" class="text-[1.6rem] -ml-[4rem] mt-12 font-medium
+"></p>
+            <p id="qoute-para3" class="text-[1.6rem] -ml-[4rem] mt-12 font-medium
+"></p>
+        </section>
+        <!--  Button Section -->
+        <section>
+            <button class="hover:cursor-pointer font-sans
+ w-56 h-10 mb-[4rem] ml-[38rem] text-xl rounded-2xl" onclick="printRandom()">
+                <i class="fa fa-pencil" style="font-size:24px"></i>
+                Write
+                Quote</button>
+        </section>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
