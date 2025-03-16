@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tips Calculator | Jay Vegad</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+
+<body class="bg-gradient-to-br from-slate-800 to-slate-950 min-h-screen flex justify-center items-center font-sans p-4">
+    <div
+        class="w-96 md:w-[30rem] bg-white shadow-2xl rounded-3xl flex flex-col p-8 gap-6 transform transition-all hover:shadow-blue-500/20">
+        <section class="text-center">
+            <h1 class="text-3xl font-bold text-slate-800 flex items-center justify-center gap-2">
+                <i class="fas fa-calculator text-blue-500"></i>
+                Tip Calculator
+            </h1>
+            <p class="text-slate-500 mt-2">Split your bill with ease</p>
+        </section>
+
+        <section class="flex flex-col gap-4">
+            <div class="flex flex-col gap-2">
+                <label for="bill-amount" class="text-slate-700 font-medium flex items-center gap-2">
+                    <i class="fas fa-receipt text-blue-500"></i>
+                    Bill Amount
+                </label>
+                <div class="relative">
+                    <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-500">$</span>
+                    <input type="number"
+                        class="pl-8 h-12 w-full border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                        placeholder="0.00" id="bill-amount" min="0" step="0.01">
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-2">
+                <label for="bill-percentage" class="text-slate-700 font-medium flex items-center gap-2">
+                    <i class="fas fa-percentage text-blue-500"></i>
+                    Tip Percentage
+                </label>
+                <div class="relative">
+                    <input type="number"
+                        class="pr-8 h-12 w-full border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                        placeholder="15" min="0" max="100" id="bill-percentage">
+                    <span class="absolute right-3 top-1/2 transform -translate-y-1/2 text-slate-500">%</span>
+                </div>
+                <div class="flex justify-between mt-2">
+                    <button
+                        class="tip-btn px-4 py-2 bg-slate-200 rounded-lg hover:bg-blue-100 hover:text-blue-600 transition-all font-medium active:bg-blue-200"
+                        data-value="10">10%</button>
+                    <button
+                        class="tip-btn px-4 py-2 bg-slate-200 rounded-lg hover:bg-blue-100 hover:text-blue-600 transition-all font-medium active:bg-blue-200"
+                        data-value="15">15%</button>
+                    <button
+                        class="tip-btn px-4 py-2 bg-slate-200 rounded-lg hover:bg-blue-100 hover:text-blue-600 transition-all font-medium active:bg-blue-200"
+                        data-value="18">18%</button>
+                    <button
+                        class="tip-btn px-4 py-2 bg-slate-200 rounded-lg hover:bg-blue-100 hover:text-blue-600 transition-all font-medium active:bg-blue-200"
+                        data-value="20">20%</button>
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-2">
+                <label for="num-people" class="text-slate-700 font-medium flex items-center gap-2">
+                    <i class="fas fa-users text-blue-500"></i>
+                    Number of People
+                </label>
+                <div class="relative">
+                    <input type="number"
+                        class="h-12 w-full border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                        placeholder="1" min="1" id="num-people" value="1">
+                    <div class="absolute right-0 top-0 h-full flex">
+                        <button id="decrease-people"
+                            class="px-3 border-l border-slate-300 text-slate-500 hover:bg-slate-100 transition-all">−</button>
+                        <button id="increase-people"
+                            class="px-3 border-l border-slate-300 text-slate-500 hover:bg-slate-100 transition-all">+</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section
+            class="flex flex-col gap-4 bg-gradient-to-br from-blue-50 to-slate-50 p-6 rounded-2xl mt-2 border border-blue-100">
+            <div class="flex justify-between items-center">
+                <div>
+                    <p class="text-slate-700 font-medium flex items-center gap-2">
+                        <i class="fas fa-hand-holding-usd text-blue-500"></i>
+                        Total Tip
+                    </p>
+                    <p class="text-slate-500 text-sm">Amount to tip</p>
+                </div>
+                <p id="total-tip" class="text-2xl font-bold text-blue-600">$0.00</p>
+            </div>
+
+            <div class="border-t border-slate-300 pt-4 flex justify-between items-center">
+                <div>
+                    <p class="text-slate-700 font-medium flex items-center gap-2">
+                        <i class="fas fa-user-tag text-blue-500"></i>
+                        Tip Per Person
+                    </p>
+                    <p class="text-slate-500 text-sm">Split equally</p>
+                </div>
+                <p id="per-person-tip" class="text-2xl font-bold text-blue-600">$0.00</p>
+            </div>
+
+            <div class="border-t border-slate-300 pt-4 flex justify-between items-center">
+                <div>
+                    <p class="text-slate-700 font-medium flex items-center gap-2">
+                        <i class="fas fa-receipt text-green-500"></i>
+                        Total Per Person
+                    </p>
+                    <p class="text-slate-500 text-sm">Bill + tip per person</p>
+                </div>
+                <p id="total-per-person" class="text-2xl font-bold text-green-600">$0.00</p>
+            </div>
+        </section>
+
+        <button id="calculate-btn"
+            class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl transition-all flex items-center justify-center gap-2 active:scale-98 active:bg-blue-800">
+            <i class="fas fa-calculator"></i>
+            Calculate Tip
+        </button>
+
+        <div id="reset-container" class="text-center">
+            <button id="reset-btn" class="text-slate-500 hover:text-blue-600 transition-all text-sm">
+                Reset Calculator
+            </button>
+        </div>
+    </div>
+
+    <script src="app.js">
+
+    </script>
+</body>
+
+</html>
